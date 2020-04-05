@@ -1,4 +1,4 @@
-import pygame, sys, random, tf8L
+import pygame, sys, random, tf8L, os
 from pygame.locals import *
 DISPLAYSURF = pygame.display.set_mode((300, 500))
 GRAY     = (100, 100, 100)
@@ -16,8 +16,11 @@ pygame.display.set_caption('2048')
 BOXSIZE = 50
 FPS = 60
 gap = 1
-top = pygame.image.load("tf8_top.png")
-buttom = pygame.image.load('tf8_buttom.png')
+cwd = os.path.dirname(os.path.realpath(__file__))
+top_path = os.path.join(cwd, "tf8_top.png")
+bottom_path = os.path.join(cwd, "tf8_bottom.png")
+top = pygame.image.load(top_path)
+buttom = pygame.image.load(bottom_path)
 
 def main():
     mainboard = tf8L.genBoard()
